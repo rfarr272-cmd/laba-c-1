@@ -440,7 +440,7 @@ int main() {
       }
       case 18: {
         std::cout << "\n--- Задание 4.3. Возвратный реверс ---\n";
-        const int kSize = 7;
+        const int kSize = 5;
         int arr[kSize];
         ReadArray(arr, kSize);
         int* reversed = reverseBack(arr, kSize);
