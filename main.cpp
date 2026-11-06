@@ -121,7 +121,7 @@ void square(int x) {
     for (int col = 0; col < x; ++col) {
       std::cout << '*';
     }
-    std::cout << '\n';
+    std::cout << std::endl;
   }
 }
 
@@ -134,7 +134,7 @@ void rightTriangle(int x) {
     for (int i = 0; i < row; ++i) {
       std::cout << '*';
     }
-    std::cout << '\n';
+    std::cout << std::endl;
   }
 }
 
@@ -217,7 +217,7 @@ double ReadDouble(const char* prompt) {
     if (std::cin >> value) {
       return value;
     }
-    std::cout << "Ошибка: введите число.\n";
+    std::cout << "Ошибка: введите число." << std::endl;
     ClearInput();
   }
 }
@@ -229,7 +229,7 @@ int ReadInt(const char* prompt) {
     if (std::cin >> value) {
       return value;
     }
-    std::cout << "Ошибка: введите целое число.\n";
+    std::cout << "Ошибка: введите целое число." << std::endl;
     ClearInput();
   }
 }
@@ -241,7 +241,7 @@ long ReadLong(const char* prompt) {
     if (std::cin >> value) {
       return value;
     }
-    std::cout << "Ошибка: введите целое число.\n";
+    std::cout << "Ошибка: введите целое число." << std::endl;
     ClearInput();
   }
 }
@@ -254,12 +254,12 @@ char ReadDigit(const char* prompt) {
     if (value >= '0' && value <= '9') {
       return value;
     }
-    std::cout << "Ошибка: введите одну цифру (0-9).\n";
+    std::cout << "Ошибка: введите одну цифру (0-9)." << std::endl;
   }
 }
 
 void ReadArray(int arr[], int size) {
-  std::cout << "Введите " << size << " элементов через пробел:\n";
+  std::cout << "Введите " << size << " элементов через пробел:" << std::endl;
   for (int i = 0; i < size; ++i) {
     arr[i] = ReadInt("  элемент: ");
   }
@@ -280,178 +280,197 @@ int main() {
   std::setlocale(LC_ALL, "Russian");
 
   while (true) {
-    std::cout << "\n========================================\n";
-    std::cout << "          Выбор задачи\n";
-    std::cout << "========================================\n";
-    std::cout << "Задание 1. Методы:\n";
-    std::cout << "  1  - Дробная часть\n";
-    std::cout << "  2  - Букву в число\n";
-    std::cout << "  3  - Двузначное\n";
-    std::cout << "  4  - Диапазон\n";
-    std::cout << "  5  - Равенство\n";
-    std::cout << "Задание 2. Условия:\n";
-    std::cout << "  6  - Модуль числа\n";
-    std::cout << "  7  - Тридцать пять\n";
-    std::cout << "  8  - Тройной максимум\n";
-    std::cout << "  9  - Двойная сумма\n";
-    std::cout << "  10 - День недели\n";
-    std::cout << "Задание 3. Циклы:\n";
-    std::cout << "  11 - Числа подряд\n";
-    std::cout << "  12 - Чётные числа\n";
-    std::cout << "  13 - Длина числа\n";
-    std::cout << "  14 - Квадрат\n";
-    std::cout << "  15 - Правый треугольник\n";
-    std::cout << "Задание 4. Массивы:\n";
-    std::cout << "  16 - Поиск первого значения\n";
-    std::cout << "  17 - Поиск максимального\n";
-    std::cout << "  18 - Возвратный реверс\n";
-    std::cout << "  19 - Все вхождения\n";
-    std::cout << "  20 - Добавление массива в массив\n";
-    std::cout << "----------------------------------------\n";
-    std::cout << "  0  - Выход\n";
-    std::cout << "========================================\n";
+    std::cout << std::endl;
+    std::cout << "          Выбор задачи" << std::endl;
+    std::cout << "Задание 1. Методы:" << std::endl;
+    std::cout << "  1  - Дробная часть" << std::endl;
+    std::cout << "  2  - Букву в число" << std::endl;
+    std::cout << "  3  - Двузначное" << std::endl;
+    std::cout << "  4  - Диапазон" << std::endl;
+    std::cout << "  5  - Равенство" << std::endl;
+    std::cout << "Задание 2. Условия:" << std::endl;
+    std::cout << "  6  - Модуль числа" << std::endl;
+    std::cout << "  7  - Тридцать пять" << std::endl;
+    std::cout << "  8  - Тройной максимум" << std::endl;
+    std::cout << "  9  - Двойная сумма" << std::endl;
+    std::cout << "  10 - День недели" << std::endl;
+    std::cout << "Задание 3. Циклы:" << std::endl;
+    std::cout << "  11 - Числа подряд" << std::endl;
+    std::cout << "  12 - Чётные числа" << std::endl;
+    std::cout << "  13 - Длина числа" << std::endl;
+    std::cout << "  14 - Квадрат" << std::endl;
+    std::cout << "  15 - Правый треугольник" << std::endl;
+    std::cout << "Задание 4. Массивы:" << std::endl;
+    std::cout << "  16 - Поиск первого значения" << std::endl;
+    std::cout << "  17 - Поиск максимального" << std::endl;
+    std::cout << "  18 - Возвратный реверс" << std::endl;
+    std::cout << "  19 - Все вхождения" << std::endl;
+    std::cout << "  20 - Добавление массива в массив" << std::endl;
+    std::cout << "  0  - Выход" << std::endl;
 
     int choice = ReadInt("Введите номер задачи (0 - выход): ");
 
     if (choice == 0) {
-      std::cout << "Выход из программы.\n";
+      std::cout << "Выход из программы." << std::endl;
       break;
     }
 
     switch (choice) {
       case 1: {
-        std::cout << "\n--- Задание 1.1. Дробная часть ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 1.1. Дробная часть " << std::endl;
         double x = ReadDouble("Введите вещественное число x: ");
-        std::cout << "Результат: " << fraction(x) << "\n";
+        std::cout << "Результат: " << fraction(x) << std::endl;
         break;
       }
       case 2: {
-        std::cout << "\n--- Задание 1.2. Букву в число ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 1.2. Букву в число " << std::endl;
         char c = ReadDigit("Введите цифру (0-9): ");
-        std::cout << "Результат: " << charToNum(c) << "\n";
+        std::cout << "Результат: " << charToNum(c) << std::endl;
         break;
       }
       case 3: {
-        std::cout << "\n--- Задание 1.3. Двузначное ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 1.3. Двузначное " << std::endl;
         int n = ReadInt("Введите число x: ");
         std::cout << "Результат: " << (is2Digits(n) ? "true" : "false")
-                  << "\n";
+                  << std::endl;
         break;
       }
       case 4: {
-        std::cout << "\n--- Задание 1.4. Диапазон ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 1.4. Диапазон " << std::endl;
         int a = ReadInt("Введите границу a: ");
         int b = ReadInt("Введите границу b: ");
         int num = ReadInt("Введите число num: ");
         std::cout << "Результат: " << (isInRange(a, b, num) ? "true" : "false")
-                  << "\n";
+                  << std::endl;
         break;
       }
       case 5: {
-        std::cout << "\n--- Задание 1.5. Равенство ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 1.5. Равенство " << std::endl;
         int a = ReadInt("Введите a: ");
         int b = ReadInt("Введите b: ");
         int c = ReadInt("Введите c: ");
         std::cout << "Результат: " << (isEqual(a, b, c) ? "true" : "false")
-                  << "\n";
+                  << std::endl;
         break;
       }
       case 6: {
-        std::cout << "\n--- Задание 2.1. Модуль числа ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 2.1. Модуль числа " << std::endl;
         int x = ReadInt("Введите x: ");
-        std::cout << "Результат: " << abs(x) << "\n";
+        std::cout << "Результат: " << abs(x) << std::endl;
         break;
       }
       case 7: {
-        std::cout << "\n--- Задание 2.2. Тридцать пять ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 2.2. Тридцать пять " << std::endl;
         int x = ReadInt("Введите x: ");
-        std::cout << "Результат: " << (is35(x) ? "true" : "false") << "\n";
+        std::cout << "Результат: " << (is35(x) ? "true" : "false")
+                  << std::endl;
         break;
       }
       case 8: {
-        std::cout << "\n--- Задание 2.3. Тройной максимум ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 2.3. Тройной максимум " << std::endl;
         int x = ReadInt("Введите x: ");
         int y = ReadInt("Введите y: ");
         int z = ReadInt("Введите z: ");
-        std::cout << "Результат: " << max3(x, y, z) << "\n";
+        std::cout << "Результат: " << max3(x, y, z) << std::endl;
         break;
       }
       case 9: {
-        std::cout << "\n--- Задание 2.4. Двойная сумма ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 2.4. Двойная сумма " << std::endl;
         int x = ReadInt("Введите x: ");
         int y = ReadInt("Введите y: ");
-        std::cout << "Результат: " << sum2(x, y) << "\n";
+        std::cout << "Результат: " << sum2(x, y) << std::endl;
         break;
       }
       case 10: {
-        std::cout << "\n--- Задание 2.5. День недели ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 2.5. День недели " << std::endl;
         int d = ReadInt("Введите номер дня (1-7): ");
-        std::cout << "Результат: " << day(d) << "\n";
+        std::cout << "Результат: " << day(d) << std::endl;
         break;
       }
       case 11: {
-        std::cout << "\n--- Задание 3.1. Числа подряд ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 3.1. Числа подряд " << std::endl;
         int x = ReadInt("Введите x: ");
-        std::cout << "Результат: " << listNums(x) << "\n";
+        std::cout << "Результат: " << listNums(x) << std::endl;
         break;
       }
       case 12: {
-        std::cout << "\n--- Задание 3.2. Чётные числа ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 3.2. Чётные числа " << std::endl;
         int x = ReadInt("Введите x: ");
-        std::cout << "Результат: " << chet(x) << "\n";
+        std::cout << "Результат: " << chet(x) << std::endl;
         break;
       }
       case 13: {
-        std::cout << "\n--- Задание 3.3. Длина числа ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 3.3. Длина числа " << std::endl;
         long x = ReadLong("Введите x: ");
-        std::cout << "Результат: " << numLen(x) << "\n";
+        std::cout << "Результат: " << numLen(x) << std::endl;
         break;
       }
       case 14: {
-        std::cout << "\n--- Задание 3.4. Квадрат ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 3.4. Квадрат " << std::endl;
         int x = ReadInt("Введите сторону x: ");
-        std::cout << "Результат:\n";
+        std::cout << "Результат:" << std::endl;
         square(x);
         break;
       }
       case 15: {
-        std::cout << "\n--- Задание 3.5. Правый треугольник ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 3.5. Правый треугольник " << std::endl;
         int x = ReadInt("Введите высоту x: ");
-        std::cout << "Результат:\n";
+        std::cout << "Результат:" << std::endl;
         rightTriangle(x);
         break;
       }
       case 16: {
-        std::cout << "\n--- Задание 4.1. Поиск первого значения ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 4.1. Поиск первого значения "
+                  << std::endl;
         const int kSize = 7;
         int arr[kSize];
         ReadArray(arr, kSize);
         int target = ReadInt("Введите x для поиска: ");
-        std::cout << "Результат: " << findFirst(arr, kSize, target) << "\n";
+        std::cout << "Результат: " << findFirst(arr, kSize, target)
+                  << std::endl;
         break;
       }
       case 17: {
-        std::cout << "\n--- Задание 4.2. Поиск максимального ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 4.2. Поиск максимального " << std::endl;
         const int kSize = 7;
         int arr[kSize];
         ReadArray(arr, kSize);
-        std::cout << "Результат: " << maxAbs(arr, kSize) << "\n";
+        std::cout << "Результат: " << maxAbs(arr, kSize) << std::endl;
         break;
       }
       case 18: {
-        std::cout << "\n--- Задание 4.3. Возвратный реверс ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 4.3. Возвратный реверс " << std::endl;
         const int kSize = 5;
         int arr[kSize];
         ReadArray(arr, kSize);
         int* reversed = reverseBack(arr, kSize);
         std::cout << "Результат: ";
         PrintArray(reversed, kSize);
-        std::cout << "\n";
+        std::cout << std::endl;
         delete[] reversed;
         break;
       }
       case 19: {
-        std::cout << "\n--- Задание 4.4. Все вхождения ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 4.4. Все вхождения " << std::endl;
         const int kSize = 7;
         int arr[kSize];
         ReadArray(arr, kSize);
@@ -465,27 +484,29 @@ int main() {
           }
           std::cout << found[i];
         }
-        std::cout << "]\n";
+        std::cout << "]" << std::endl;
         delete[] found;
         break;
       }
       case 20: {
-        std::cout << "\n--- Задание 4.5. Добавление массива в массив ---\n";
+        std::cout << std::endl;
+        std::cout << " Задание 4.5. Добавление массива в массив "
+                  << std::endl;
         const int kArrSize = 5;
         const int kInsSize = 3;
         int arr[kArrSize];
         int ins[kInsSize];
 
-        std::cout << "Массив arr (5 элементов):\n";
+        std::cout << "Массив arr (5 элементов):" << std::endl;
         ReadArray(arr, kArrSize);
 
-        std::cout << "Массив ins (3 элемента):\n";
+        std::cout << "Массив ins (3 элемента):" << std::endl;
         ReadArray(ins, kInsSize);
 
         int pos = ReadInt("Введите позицию вставки pos (0-5): ");
         while (pos < 0 || pos > kArrSize) {
           std::cout << "Ошибка: pos должен быть от 0 до " << kArrSize
-                    << ".\n";
+                    << "." << std::endl;
           pos = ReadInt("Введите позицию вставки pos (0-5): ");
         }
 
@@ -493,19 +514,21 @@ int main() {
         int result_size = result[0];
         std::cout << "Результат: ";
         PrintArray(result + 1, result_size);
-        std::cout << "\n";
+        std::cout << std::endl;
         delete[] result;
         break;
       }
       default:
-        std::cout << "Неверный номер задачи.\n";
+        std::cout << "Неверный номер задачи." << std::endl;
     }
 
-    std::cout << "\nНажмите Enter, чтобы вернуться в меню...";
+    std::cout << std::endl;
+    std::cout << "Нажмите Enter, чтобы вернуться в меню...";
     std::cin.ignore(10000, '\n');
     std::cin.get();
   }
 
-  std::cout << "\nВсе задания выполнены.\n";
+  std::cout << std::endl;
+  std::cout << "Все задания выполнены." << std::endl;
   return 0;
 }
